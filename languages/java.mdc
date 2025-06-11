@@ -4,20 +4,20 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Java 的约定和最佳实践。
+description: 此規則解釋了 Java 的約定和最佳實踐。
 globs: **/*.java
 alwaysApply: false
 ---
 
-# Java 语言规范
+# Java 語言規範
 
 ## Java 21 特性使用
-- **Record类**：用于不可变数据传输对象
+- **Record類別**：用於不可變資料傳輸物件
   ```java
   public record UserInfo(String name, String email, LocalDateTime createdAt) {}
   ```
 
-- **Pattern Matching**：在switch表达式中使用模式匹配
+- **Pattern Matching**：在switch表示式中使用模式匹配
   ```java
   public String formatValue(Object value) {
       return switch (value) {
@@ -29,7 +29,7 @@ alwaysApply: false
   }
   ```
 
-- **Text Blocks**：用于多行字符串，特别是SQL和JSON
+- **Text Blocks**：用於多行字串，特別是SQL和JSON
   ```java
   String sql = """
       SELECT u.name, u.email
@@ -39,65 +39,65 @@ alwaysApply: false
       """;
   ```
 
-- **Sealed Classes**：用于受限的类层次结构
+- **Sealed Classes**：用於受限的類別階層結構
   ```java
   public sealed class Result<T> permits Success, Error {
-      // 基类定义
+      // 基底類別定義
   }
 
   public final class Success<T> extends Result<T> {
       private final T data;
-      // 实现
+      // 實作
   }
   ```
 
-- **Virtual Threads**：用于高并发场景
+- **Virtual Threads**：用於高並行場景
   ```java
   try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
       executor.submit(() -> {
-          // 高并发任务
+          // 高並行任務
       });
   }
   ```
 
-## 命名约定
-- **类名**：使用帕斯卡命名法（如 `UserController`、`OrderService`）
-- **方法和变量名**：使用驼峰命名法（如 `findUserById`、`isOrderValid`）
-- **常量**：使用全大写下划线分隔（如 `MAX_RETRY_ATTEMPTS`、`DEFAULT_PAGE_SIZE`）
-- **包名**：使用小写，按功能模块划分（如 `com.example.user.domain`）
+## 命名約定
+- **類別名稱**：使用帕斯卡命名法（如 `UserController`、`OrderService`）
+- **方法和變數名稱**：使用駝峰命名法（如 `findUserById`、`isOrderValid`）
+- **常數**：使用全大寫底線分隔（如 `MAX_RETRY_ATTEMPTS`、`DEFAULT_PAGE_SIZE`）
+- **套件名稱**：使用小寫，按功能模組劃分（如 `com.example.user.domain`）
 
-## 代码风格
-- **缩进**：使用4个空格，不使用Tab
-- **行长度**：每行不超过120个字符
-- **大括号**：使用Egyptian风格（开括号不换行）
-- **空行**：方法间使用一个空行分隔，逻辑块间使用空行分隔
+## 程式碼風格
+- **縮排**：使用4個空格，不使用Tab
+- **行長度**：每行不超過120個字元
+- **大括號**：使用Egyptian風格（開括號不換行）
+- **空行**：方法間使用一個空行分隔，邏輯區塊间使用空行分隔
 
-## 异常处理
-- **检查异常**：谨慎使用检查异常，优先使用运行时异常
-- **异常链**：保持异常链，不丢失原始异常信息
+## 例外處理
+- **檢查例外**：謹慎使用檢查例外，優先使用執行時例外
+- **例外鏈**：保持例外鏈，不遺失原始例外資訊
   ```java
   try {
-      // 可能抛出异常的代码
+      // 可能拋出例外的程式碼
   } catch (SpecificException e) {
-      throw new BusinessException("业务处理失败", e);
+      throw new BusinessException("業務處理失敗", e);
   }
   ```
 
-- **资源管理**：使用try-with-resources自动管理资源
+- **資源管理**：使用try-with-resources自動管理資源
   ```java
   try (var reader = Files.newBufferedReader(path)) {
       // 使用reader
   }
   ```
 
-## 集合和流处理
-- **集合选择**：根据使用场景选择合适的集合类型
-  - `ArrayList`：随机访问频繁
-  - `LinkedList`：插入删除频繁
-  - `HashMap`：键值对存储
-  - `TreeMap`：需要排序的键值对
+## 集合和流處理
+- **集合選擇**：根據使用場景選擇合適的集合型別
+  - `ArrayList`：隨機存取頻繁
+  - `LinkedList`：插入刪除頻繁
+  - `HashMap`：鍵值對儲存
+  - `TreeMap`：需要排序的鍵值對
 
-- **Stream API**：充分利用Stream API进行函数式编程
+- **Stream API**：充分利用Stream API進行函數式程式設計
   ```java
   List<String> activeUserNames = users.stream()
       .filter(user -> user.isActive())
@@ -106,43 +106,43 @@ alwaysApply: false
       .toList();
   ```
 
-## 并发编程
-- **线程安全**：优先使用不可变对象和线程安全的集合
-- **锁机制**：合理使用synchronized、ReentrantLock等锁机制
-- **并发集合**：使用ConcurrentHashMap、CopyOnWriteArrayList等并发集合
-- **CompletableFuture**：使用CompletableFuture处理异步操作
+## 並行程式設計
+- **執行緒安全**：優先使用不可變物件和執行緒安全的集合
+- **鎖機制**：合理使用synchronized、ReentrantLock等鎖機制
+- **並行集合**：使用ConcurrentHashMap、CopyOnWriteArrayList等並行集合
+- **CompletableFuture**：使用CompletableFuture處理非同步操作
   ```java
   CompletableFuture<String> future = CompletableFuture
       .supplyAsync(() -> fetchData())
       .thenApply(data -> processData(data))
-      .exceptionally(throwable -> "默认值");
+      .exceptionally(throwable -> "預設值");
   ```
 
-## 内存管理
-- **对象创建**：避免在循环中创建不必要的对象
-- **字符串处理**：大量字符串操作使用StringBuilder
-- **集合大小**：预估集合大小，避免频繁扩容
-- **弱引用**：适当使用WeakReference避免内存泄漏
+## 記憶體管理
+- **物件建立**：避免在迴圈中建立不必要的物件
+- **字串處理**：大量字串操作使用StringBuilder
+- **集合大小**：預估集合大小，避免頻繁擴容
+- **弱引用**：適當使用WeakReference避免記憶體洩漏
 
 ## 泛型使用
-- **类型安全**：充分利用泛型提供类型安全
-- **通配符**：正确使用上界通配符（? extends）和下界通配符（? super）
-- **类型擦除**：理解泛型类型擦除的限制
+- **型別安全**：充分利用泛型提供型別安全
+- **通配符**：正確使用上界通配符（? extends）和下界通配符（? super）
+- **型別擦除**：理解泛型型別擦除的限制
   ```java
   public <T extends Comparable<T>> T findMax(List<T> list) {
       return list.stream().max(Comparable::compareTo).orElse(null);
   }
   ```
 
-## 注解使用
-- **标准注解**：正确使用@Override、@Deprecated、@SuppressWarnings等
-- **自定义注解**：合理创建自定义注解简化代码
-- **注解处理**：了解编译时和运行时注解处理
+## 註解使用
+- **標準註解**：正確使用@Override、@Deprecated、@SuppressWarnings等
+- **自訂註解**：合理建立自訂註解簡化程式碼
+- **註解處理**：了解編譯時期和執行時註解處理
 
-## 测试规范
-- **单元测试**：使用JUnit 5编写单元测试
-- **测试命名**：测试方法使用描述性命名（如 `shouldReturnUserWhenValidIdProvided`）
-- **断言**：使用AssertJ提供更好的断言体验
+## 測試規範
+- **單元測試**：使用JUnit 5編寫單元測試
+- **測試命名**：測試方法使用描述性命名（如 `shouldReturnUserWhenValidIdProvided`）
+- **斷言**：使用AssertJ提供更好的斷言體驗
   ```java
   @Test
   void shouldCalculateCorrectTotal() {
@@ -160,34 +160,34 @@ alwaysApply: false
   }
   ```
 
-## 性能优化
-- **算法复杂度**：选择合适的算法和数据结构
-- **缓存策略**：合理使用缓存减少重复计算
-- **懒加载**：对于昂贵的操作使用懒加载
-- **批量处理**：批量处理数据库操作和网络请求
+## 效能優化
+- **演算法複雜度**：選擇合適的演算法和資料結構
+- **快取策略**：合理使用快取減少重複計算
+- **懶載入**：對於昂貴的操作使用懶載入
+- **批次處理**：批次處理資料庫操作和網路請求
 
-## 代码质量
-- **单一职责**：每个类和方法只负责一个功能
-- **开闭原则**：对扩展开放，对修改关闭
-- **依赖倒置**：依赖抽象而不是具体实现
-- **接口隔离**：使用小而专一的接口
-- **代码复用**：提取公共逻辑，避免重复代码
+## 程式碼品質
+- **單一職責**：每個類別和方法只負責一個功能
+- **開閉原則**：對擴展開放，對修改關閉
+- **依賴反轉**：依賴抽象而非具體實作
+- **介面隔離**：使用小而專一的介面
+- **程式碼複用**：提取公共邏輯，避免重複程式碼
 
-## 文档和注释
-- **JavaDoc**：为公共API编写完整的JavaDoc
-- **代码注释**：为复杂逻辑添加解释性注释
-- **TODO标记**：使用TODO标记待完成的工作
+## 文件和註釋
+- **JavaDoc**：為公共API編寫完整的JavaDoc
+- **程式碼註釋**：為複雜邏輯新增解釋性註釋
+- **TODO標記**：使用TODO標記待完成的工作
   ```java
   /**
-   * 计算用户积分
+   * 計算使用者積分
    *
-   * @param userId 用户ID
-   * @param actions 用户行为列表
-   * @return 计算得出的积分值
-   * @throws UserNotFoundException 当用户不存在时抛出
+   * @param userId 使用者ID
+   * @param actions 使用者行為列表
+   * @return 計算得出的積分值
+   * @throws UserNotFoundException 當使用者不存在時拋出
    */
   public int calculatePoints(Long userId, List<UserAction> actions) {
-      // TODO: 实现积分计算逻辑
+      // 範例：實現積分計算邏輯
       return 0;
   }
   ```

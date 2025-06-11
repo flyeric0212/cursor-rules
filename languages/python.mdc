@@ -4,22 +4,22 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Python 编码、最佳实践、 整洁高效的代码模式.
+description: 此規則解釋了 Python 編碼、最佳實踐、簡潔高效的程式碼模式。
 globs: **/*.py
 alwaysApply: false
 ---
 
-# Python 规则
+# Python 規則
 
-- 遵循 PEP 8 风格指南和命名约定
-- 使用类型注解增强代码可读性和类型安全性
-- 使用虚拟环境管理依赖：
-  - 优先使用 `venv` 或 `poetry` 进行环境隔离
-  - 使用 `requirements.txt` 或 `pyproject.toml` 记录依赖
-- 使用上下文管理器处理资源（如文件操作）
-- 优先使用列表推导式、生成器表达式和字典推导式
-- 使用 `pytest` 进行测试，保持高测试覆盖率
-- 使用文档字符串（docstrings）记录函数、类和模块
-- 遵循面向对象设计原则（SOLID）
-- 使用异常处理保证程序健壮性
-- 使用 `dataclasses` 或 `pydantic` 模型表示数据
+- 遵循 PEP 8 風格指南和命名約定
+- 使用型別註解增強程式碼可讀性和型別安全性
+- 使用虛擬環境管理依賴：
+  - 優先使用 `venv` 或 `poetry` 進行環境隔離
+  - 使用 `requirements.txt` 或 `pyproject.toml` 記錄依賴
+- 使用上下文管理器處理資源（如檔案操作）
+- 優先使用列表推導式、產生器表達式和字典推導式
+- 使用 `pytest` 進行測試，保持高測試覆蓋率
+- 使用文件字串（docstrings）記錄函數、類別和模組
+- 遵循物件導向設計原則（SOLID）
+- 使用例外處理保證程式健壯性
+- 使用 `dataclasses` 或 `pydantic` 模型表示資料

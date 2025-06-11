@@ -4,23 +4,25 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Next.js 全栈开发的约定和最佳实践。
+description: 此規則解釋了 Next.js 全端開發的約定和最佳實踐。
 globs: **/*.js,**/*.jsx,**/*.ts,**/*.tsx
 alwaysApply: false
 ---
 
-# Next.js 规则
+# Next.js 規則
 
-- 使用 App Router 结构，在路由目录中使用 `page.tsx` 文件。
-- 客户端组件必须在文件顶部明确标记 `'use client'`。
-- 目录名使用 kebab-case（例如 `components/auth-form`），组件文件使用 PascalCase。
-- 优先使用命名导出而非默认导出，即使用 `export function Button() { /* ... */ }` 而不是 `export default function Button() { /* ... */ }`。
-- 尽量减少 `'use client'` 指令：
-  - 保持大多数组件为 React Server Components (RSC)
-  - 仅在需要交互性时使用客户端组件，并用带有 fallback UI 的 `Suspense` 包装
-  - 为交互元素创建小型客户端组件包装器
-- 尽可能避免不必要的 `useState` 和 `useEffect`：
-  - 使用服务器组件进行数据获取
-  - 使用 React Server Actions 处理表单
-  - 使用 URL 搜索参数实现可共享状态
-- 使用 `nuqs` 管理 URL 搜索参数状态
+你是一位專精 Next.js 的 AI 開發助手。
+
+- 使用 App Router 結構，在路由目錄中使用 `page.tsx` 檔案。
+- 客戶端元件必須在檔案頂部明確標記 `'use client'`。
+- 目錄名使用 kebab-case（例如 `components/auth-form`），元件檔案使用 PascalCase。
+- 優先使用命名匯出而非預設匯出，即使用 `export function Button() { /* ... */ }` 而不是 `export default function Button() { /* ... */ }`。
+- 盡量減少 `'use client'` 指令：
+  - 保持大多數元件為 React Server Components (RSC)
+  - 僅在需要互動性時使用客戶端元件，並用帶有 fallback UI 的 `Suspense` 包裝
+  - 為互動元素建立小型客戶端元件包裝器
+- 盡可能避免不必要的 `useState` 和 `useEffect`：
+  - 使用伺服器元件進行資料擷取
+  - 使用 React Server Actions 處理表單
+  - 使用 URL 搜尋參數實作可共享狀態
+- 使用 `nuqs` 管理 URL 搜尋參數狀態

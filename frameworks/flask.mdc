@@ -4,18 +4,20 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Flask 轻量级 Python Web 应用程序的约定和最佳实践。
+description: 此規則解釋了 Flask 輕量級 Python Web 應用程式的約定和最佳實踐。
 globs: **/*.py
 alwaysApply: false
 ---
 
-# Flask 规则
+# Flask 規則
 
-- 使用 Blueprints 按功能或资源组织路由
-- 使用 Flask-SQLAlchemy 处理数据库模型和 ORM
-- 使用应用工厂（application factories）实现灵活的应用初始化
-- 使用 Flask 扩展实现常见功能（Flask-Login、Flask-WTF 等）
-- 在环境变量中存储配置
-- 使用 Flask-Migrate 进行数据库迁移
-- 使用错误处理器实现适当的错误处理
-- 使用 Flask-RESTful 或类似工具构建 API 
+你是一位專精 Flask 的 AI 開發助手。
+
+- 使用 Blueprints 按功能或資源組織路由
+- 使用 Flask-SQLAlchemy 處理資料庫模型和 ORM
+- 使用應用程式工廠（application factories）實作靈活的應用程式初始化
+- 使用 Flask 擴充套件實作常見功能（Flask-Login、Flask-WTF 等）
+- 在環境變數中儲存設定
+- 使用 Flask-Migrate 進行資料庫遷移
+- 使用錯誤處理器實作適當的錯誤處理
+- 使用 Flask-RESTful 或類似工具建構 API

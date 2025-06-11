@@ -4,17 +4,19 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Django 后端开发的约定和最佳实践。
+description: 此規則解釋了 Django 後端開發的約定和最佳實踐。
 globs: **/*.py
 alwaysApply: false
 ---
 
-# Django 规则
+# Django 規則
 
-- 使用 `python manage.py startapp` 在项目中创建新应用
-- 在 `models.py` 中保存模型，并在 `admin.py` 中注册以使用管理界面
-- 使用 Django 的 ORM 而非原始 SQL 查询
-- 使用 `select_related` 和 `prefetch_related` 避免 N+1 查询问题：
+你是一位專精 Django 的 AI 開發助手。
+
+- 使用 `python manage.py startapp` 在專案中建立新應用
+- 在 `models.py` 中儲存模型，並在 `admin.py` 中註冊以使用管理介面
+- 使用 Django 的 ORM 而非原始 SQL 查詢
+- 使用 `select_related` 和 `prefetch_related` 避免 N+1 查詢問題：
 
 ```python
 # 良好模式
@@ -22,7 +24,7 @@ users = User.objects.select_related('profile')
 posts = Post.objects.prefetch_related('tags')
 ```
 
-- 使用 Django 表单进行验证：
+- 使用 Django 表單進行驗證：
 
 ```python
 class UserForm(forms.ModelForm):
@@ -31,7 +33,7 @@ class UserForm(forms.ModelForm):
         fields = ['username', 'email']
 ```
 
-- 为常见查询创建自定义模型管理器：
+- 為常見查詢建立自訂模型管理器：
 
 ```python
 class ActiveUserManager(models.Manager):
@@ -39,5 +41,5 @@ class ActiveUserManager(models.Manager):
         return super().get_queryset().filter(is_active=True)
 ```
 
-- 使用 Django 内置的身份验证系统
-- 在环境变量中存储设置并通过 `settings.py` 访问 
+- 使用 Django 內建的身份驗證系統
+- 在環境變數中儲存設定並透過 `settings.py` 存取

@@ -4,22 +4,22 @@ globs:
 alwaysApply: false
 ---
 ---
-description: CSS 和样式规范
+description: CSS 和樣式規範
 globs: *.css, *.scss, *.less, *.styled.ts
 alwaysApply: false
 ---
 
-# CSS 和样式规范
+# CSS 和樣式規範
 
-## 样式架构原则
-- **组件化样式**：每个组件的样式应该封装在组件内部
-- **样式隔离**：避免全局样式污染，使用CSS-in-JS或CSS Modules
-- **主题一致性**：使用设计系统和主题变量保持视觉一致性
-- **响应式设计**：优先考虑移动端，采用移动优先的响应式设计
-- **性能优化**：避免不必要的样式重绘和重排
+## 樣式架構原則
+- **元件化樣式**：每個元件的樣式應該封裝在元件內部
+- **樣式隔離**：避免全域樣式污染，使用CSS-in-JS或CSS Modules
+- **主題一致性**：使用設計系統和主題變數保持視覺一致性
+- **響應式設計**：優先考慮行動端，採用行動優先的響應式設計
+- **效能優化**：避免不必要的樣式重繪和重排
 
-## Styled Components 规范
-- **组件命名**：使用描述性的组件名，以 `Styled` 开头
+## Styled Components 規範
+- **元件命名**：使用描述性的元件名，以 `Styled` 開頭
   ```typescript
   const StyledCard = styled.div`
     padding: 16px;
@@ -28,7 +28,7 @@ alwaysApply: false
   `;
   ```
 
-- **主题使用**：通过 `theme` 属性访问主题变量
+- **主題使用**：透過 `theme` 屬性存取主題變數
   ```typescript
   const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.colors.primary};
@@ -36,7 +36,7 @@ alwaysApply: false
   `;
   ```
 
-- **条件样式**：使用 props 进行条件样式设置
+- **條件樣式**：使用 props 進行條件樣式設定
   ```typescript
   const StyledButton = styled.button<{ variant: 'primary' | 'secondary' }>`
     background-color: ${({ variant, theme }) =>
@@ -45,7 +45,7 @@ alwaysApply: false
   `;
   ```
 
-- **样式继承**：合理使用样式继承减少重复代码
+- **樣式繼承**：合理使用樣式繼承減少重複程式碼
   ```typescript
   const BaseButton = styled.button`
     padding: 8px 16px;
@@ -58,8 +58,8 @@ alwaysApply: false
   `;
   ```
 
-## Ant Design 定制规范
-- **主题定制**：使用 ConfigProvider 进行全局主题定制
+## Ant Design 客製化規範
+- **主題客製化**：使用 ConfigProvider 進行全域主題客製化
   ```typescript
   const theme = {
     token: {
@@ -70,7 +70,7 @@ alwaysApply: false
   };
   ```
 
-- **组件样式覆盖**：使用 CSS-in-JS 覆盖 Ant Design 组件样式
+- **元件樣式覆蓋**：使用 CSS-in-JS 覆蓋 Ant Design 元件樣式
   ```typescript
   const StyledTable = styled(Table)`
     .ant-table-thead > tr > th {
@@ -80,7 +80,7 @@ alwaysApply: false
   `;
   ```
 
-- **自定义组件**：基于 Ant Design 组件创建自定义组件
+- **自訂元件**：基於 Ant Design 元件建立自訂元件
   ```typescript
   const CustomCard = styled(Card)`
     border-radius: 12px;
@@ -88,8 +88,8 @@ alwaysApply: false
   `;
   ```
 
-## 响应式设计规范
-- **断点定义**：使用标准断点进行响应式设计
+## 響應式設計規範
+- **斷點定義**：使用標準斷點進行響應式設計
   ```typescript
   const breakpoints = {
     xs: '480px',
@@ -101,7 +101,7 @@ alwaysApply: false
   };
   ```
 
-- **媒体查询**：使用 CSS-in-JS 编写媒体查询
+- **媒體查詢**：使用 CSS-in-JS 編寫媒體查詢
   ```typescript
   const ResponsiveContainer = styled.div`
     padding: 16px;
@@ -112,7 +112,7 @@ alwaysApply: false
   `;
   ```
 
-- **Flex布局**：优先使用 Flexbox 进行布局
+- **Flex佈局**：優先使用 Flexbox 進行佈局
   ```typescript
   const FlexContainer = styled.div`
     display: flex;
@@ -125,8 +125,8 @@ alwaysApply: false
   `;
   ```
 
-## 颜色和主题规范
-- **颜色系统**：定义完整的颜色系统
+## 顏色和主題規範
+- **顏色系統**：定義完整的顏色系統
   ```typescript
   const colors = {
     primary: '#1890ff',
@@ -146,7 +146,7 @@ alwaysApply: false
   };
   ```
 
-- **暗色主题**：支持暗色主题切换
+- **暗色主題**：支援暗色主題切換
   ```typescript
   const darkTheme = {
     colors: {
@@ -163,8 +163,8 @@ alwaysApply: false
   };
   ```
 
-## 动画和过渡规范
-- **过渡效果**：为交互元素添加适当的过渡效果
+## 動畫和過渡規範
+- **過渡效果**：為互動元素新增適當的過渡效果
   ```typescript
   const AnimatedButton = styled.button`
     transition: all 0.3s ease;
@@ -176,7 +176,7 @@ alwaysApply: false
   `;
   ```
 
-- **加载动画**：使用 CSS 动画创建加载效果
+- **載入動畫**：使用 CSS 動畫建立載入效果
   ```typescript
   const LoadingSpinner = styled.div`
     @keyframes spin {
@@ -188,8 +188,8 @@ alwaysApply: false
   `;
   ```
 
-## 布局规范
-- **网格系统**：使用 CSS Grid 或 Flexbox 创建网格布局
+## 佈局規範
+- **網格系統**：使用 CSS Grid 或 Flexbox 建立網格佈局
   ```typescript
   const GridContainer = styled.div`
     display: grid;
@@ -198,7 +198,7 @@ alwaysApply: false
   `;
   ```
 
-- **间距系统**：使用统一的间距系统
+- **間距系統**：使用統一的間距系統
   ```typescript
   const spacing = {
     xs: '4px',
@@ -210,8 +210,8 @@ alwaysApply: false
   };
   ```
 
-## 字体和排版规范
-- **字体系统**：定义完整的字体系统
+## 字型和排版規範
+- **字型系統**：定義完整的字型系統
   ```typescript
   const typography = {
     fontFamily: {
@@ -235,7 +235,7 @@ alwaysApply: false
   };
   ```
 
-- **行高和字间距**：设置合适的行高和字间距
+- **行高和字間距**：設定合適的行高和字間距
   ```typescript
   const TextComponent = styled.p`
     line-height: 1.6;
@@ -243,10 +243,10 @@ alwaysApply: false
   `;
   ```
 
-## 性能优化规范
-- **CSS优化**：避免深层嵌套和复杂选择器
-- **重绘重排**：避免频繁的样式变更导致的重绘重排
-- **CSS-in-JS优化**：使用 `shouldForwardProp` 避免不必要的 DOM 属性
+## 效能優化規範
+- **CSS優化**：避免深層嵌套和複雜選擇器
+- **重繪重排**：避免頻繁的樣式變更導致的重繪重排
+- **CSS-in-JS優化**：使用 `shouldForwardProp` 避免不必要的 DOM 屬性
   ```typescript
   const StyledDiv = styled.div.withConfig({
     shouldForwardProp: (prop) => !['customProp'].includes(prop),
@@ -255,9 +255,9 @@ alwaysApply: false
   `;
   ```
 
-## 可访问性规范
-- **对比度**：确保文本和背景有足够的对比度
-- **焦点状态**：为可交互元素提供清晰的焦点状态
+## 可存取性規範
+- **對比度**：確保文字和背景有足夠的對比度
+- **焦點狀態**：為可互動元素提供清晰的焦點狀態
   ```typescript
   const AccessibleButton = styled.button`
     &:focus {
@@ -267,13 +267,13 @@ alwaysApply: false
   `;
   ```
 
-- **语义化**：使用语义化的 HTML 元素和 ARIA 属性
+- **語意化**：使用語意化的 HTML 元素和 ARIA 屬性
 
-## 代码组织规范
-- **文件结构**：样式文件与组件文件放在同一目录
-- **样式分离**：将复杂的样式逻辑提取到单独的样式文件
-- **主题文件**：将主题相关的配置集中管理
-- **工具函数**：创建样式工具函数提高复用性
+## 程式碼組織規範
+- **檔案結構**：樣式檔案與元件檔案放在同一目錄
+- **樣式分離**：將複雜的樣式邏輯提取到單獨的樣式檔案
+- **主題檔案**：將主題相關的設定集中管理
+- **工具函式**：建立樣式工具函式提高複用性
   ```typescript
   const getSpacing = (size: keyof typeof spacing) => spacing[size];
   const getColor = (color: string) => ({ theme }: { theme: any }) => theme.colors[color];

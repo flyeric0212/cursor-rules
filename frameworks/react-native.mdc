@@ -4,106 +4,106 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 TypeScript、React Native、Expo 和移动 UI 开发的使用方法和最佳实践。
+description: 此規則解釋了 TypeScript、React Native、Expo 和行動 UI 開發的使用方法和最佳實踐。
 globs: **/*.jsx,**/*.tsx
 alwaysApply: false
 ---
 
-# TypeScript、React Native、Expo 和移动 UI 开发规则
+# TypeScript、React Native、Expo 和行動 UI 開發規則
 
-## 代码风格和结构
-- 编写清晰、可读的代码：确保你的代码易于阅读和理解。为变量和函数使用描述性名称。
-- 使用函数组件：优先使用带有钩子（useState, useEffect 等）的函数组件，而非类组件。
-- 组件模块化：将组件拆分为更小、可重用的部分。保持组件专注于单一职责。
-- 按功能组织文件：将相关组件、钩子和样式按功能特性分组到目录中（例如，user-profile）。
+## 程式碼風格與結構
+- 編寫清晰、可讀的程式碼：確保您的程式碼易於閱讀和理解。為變數和函數使用描述性名稱。
+- 使用函數元件：優先使用帶有鉤子（useState, useEffect 等）的函數元件，而非類別元件。
+- 元件模組化：將元件拆分為更小、可重複使用的部分。保持元件專注於單一職責。
+- 按功能組織檔案：將相關元件、鉤子和樣式按功能特性分組到目錄中（例如，user-profile）。
 
-## 命名约定
-- 变量和函数：使用驼峰命名法(camelCase)命名变量和函数，并具有描述性（例如，isFetchingData, handleUserInput）。
-- 组件：使用帕斯卡命名法(PascalCase)命名组件（例如，UserProfile）。
-- 目录：使用小写和连字符命名目录（例如，user-profile）。
+## 命名約定
+- 變數和函數：使用駝峰命名法(camelCase)命名變數和函數，並具有描述性（例如，isFetchingData, handleUserInput）。
+- 元件：使用帕斯卡命名法(PascalCase)命名元件（例如，UserProfile）。
+- 目錄：使用小寫和連字號命名目錄（例如，user-profile）。
 
 ## TypeScript 使用
-- 所有代码使用 TypeScript；接口(interfaces)优于类型(types)
-- 避免使用枚举(enums)；使用映射(maps)代替
-- 使用带有 TypeScript 接口的函数组件
-- 在 TypeScript 中使用严格模式以提高类型安全性
+- 所有程式碼使用 TypeScript；介面(interfaces)優於型別(types)
+- 避免使用列舉(enums)；使用對映(maps)代替
+- 使用帶有 TypeScript 介面的函數元件
+- 在 TypeScript 中使用嚴格模式以提高型別安全性
 
-## 语法和格式
-- 使用 "function" 关键字定义纯函数
-- 避免在条件语句中使用不必要的花括号；简单语句使用简洁语法
-- 使用声明式 JSX
-- 使用 Prettier 保持代码格式一致
+## 語法和格式
+- 使用 "function" 關鍵字定義純函數
+- 避免在條件陳述中使用不必要的大括號；簡單陳述使用簡潔語法
+- 使用宣告式 JSX
+- 使用 Prettier 保持程式碼格式一致
 
-## UI 和样式
-- 使用 Expo 内置组件实现常见 UI 模式和布局
-- 使用 Flexbox 和 Expo 的 useWindowDimensions 实现响应式设计
-- 使用 styled-components 或 Tailwind CSS 进行组件样式设计
-- 使用 Expo 的 useColorScheme 实现深色模式支持
-- 确保高可访问性(a11y)标准，使用 ARIA 角色和原生可访问性属性
-- 利用 react-native-reanimated 和 react-native-gesture-handler 实现高性能动画和手势
+## UI 與樣式
+- 使用 Expo 內建元件實作常見 UI 模式和佈局
+- 使用 Flexbox 和 Expo 的 useWindowDimensions 實作響應式設計
+- 使用 styled-components 或 Tailwind CSS 進行元件樣式設計
+- 使用 Expo 的 useColorScheme 實作深色模式支援
+- 確保高可存取性(a11y)標準，使用 ARIA 角色和原生可存取性屬性
+- 利用 react-native-reanimated 和 react-native-gesture-handler 實作高效能動畫和手勢
 
-## 安全区域管理
-- 使用 react-native-safe-area-context 中的 SafeAreaProvider 全局管理安全区域
-- 用 SafeAreaView 包装顶层组件，处理 iOS 和 Android 上的刘海、状态栏和其他屏幕缩进
-- 使用 SafeAreaScrollView 处理可滚动内容，确保其尊重安全区域边界
-- 避免为安全区域硬编码内边距或外边距；依赖 SafeAreaView 和上下文钩子
+## 安全區域管理
+- 使用 react-native-safe-area-context 中的 SafeAreaProvider 全域管理安全區域
+- 用 SafeAreaView 包裝頂層元件，處理 iOS 和 Android 上的瀏海、狀態列和其他螢幕縮排
+- 使用 SafeAreaScrollView 處理可滾動內容，確保其尊重安全區域邊界
+- 避免為安全區域硬式編碼內距或外距；依賴 SafeAreaView 和上下文鉤子
 
-## 性能优化
-- 最小化 useState 和 useEffect 的使用；优先使用 context 和 reducers 进行状态管理
-- 使用 Expo 的 AppLoading 和 SplashScreen 优化应用启动体验
-- 优化图像：在支持的地方使用 WebP 格式，包含尺寸数据，使用 expo-image 实现延迟加载
-- 使用 React 的 Suspense 和动态导入实现代码分割和非关键组件的懒加载
-- 使用 React Native 内置工具和 Expo 调试功能监控性能
-- 通过适当使用组件记忆化、useMemo 和 useCallback 钩子避免不必要的重新渲染
+## 效能優化
+- 最小化 useState 和 useEffect 的使用；優先使用 context 和 reducers 進行狀態管理
+- 使用 Expo 的 AppLoading 和 SplashScreen 優化應用程式啟動體驗
+- 優化影像：在支援的地方使用 WebP 格式，包含尺寸資料，使用 expo-image 實作延遲載入
+- 使用 React 的 Suspense 和動態匯入實作程式碼分割和非關鍵元件的懶載入
+- 使用 React Native 內建工具和 Expo 除錯功能監控效能
+- 透過適當使用元件記憶化、useMemo 和 useCallback 鉤子避免不必要的重新渲染
 
-## 导航
-- 使用 react-navigation 进行路由和导航；遵循其栈导航器、标签导航器和抽屉导航器的最佳实践
-- 利用深度链接和通用链接提升用户参与度和导航流程
-- 使用 expo-router 的动态路由以获得更好的导航处理
+## 導覽
+- 使用 react-navigation 進行路由和導覽；遵循其堆疊導覽器、標籤導覽器和抽屜導覽器的最佳實踐
+- 利用深度連結和通用連結提升使用者參與度和導覽流程
+- 使用 expo-router 的動態路由以獲得更好的導覽處理
 
-## 状态管理
-- 使用 React Context 和 useReducer 管理全局状态
-- 利用 react-query 进行数据获取和缓存；避免过多的 API 调用
-- 对于复杂的状态管理，考虑使用 Zustand 或 Redux Toolkit
-- 使用 expo-linking 等库处理 URL 搜索参数
+## 狀態管理
+- 使用 React Context 和 useReducer 管理全域狀態
+- 利用 react-query 進行資料擷取和快取；避免過多的 API 呼叫
+- 對於複雜的狀態管理，考慮使用 Zustand 或 Redux Toolkit
+- 使用 expo-linking 等庫處理 URL 搜尋參數
 
-## 错误处理和验证
-- 使用 Zod 进行运行时验证和错误处理
-- 使用 Sentry 或类似服务实现适当的错误日志记录
-- 优先处理错误和边缘情况：
-  - 在函数开始时处理错误
-  - 为错误条件使用提前返回，避免深度嵌套的 if 语句
-  - 避免不必要的 else 语句；使用 if-return 模式
-  - 实现全局错误边界以捕获和处理意外错误
-- 使用 expo-error-reporter 记录和报告生产环境中的错误
+## 錯誤處理與驗證
+- 使用 Zod 進行執行時驗證和錯誤處理
+- 使用 Sentry 或類似服務實作適當的錯誤日誌記錄
+- 優先處理錯誤和邊緣情況：
+  - 在函數開始時處理錯誤
+  - 為錯誤條件使用提前返回，避免深度巢狀的 if 陳述
+  - 避免不必要的 else 陳述；使用 if-return 模式
+  - 實作全域錯誤邊界以擷取和處理意外錯誤
+- 使用 expo-error-reporter 記錄和報告生產環境中的錯誤
 
-## 测试
-- 使用 Jest 和 React Native Testing Library 编写单元测试
-- 使用 Detox 为关键用户流程实现集成测试
-- 使用 Expo 的测试工具在不同环境中运行测试
-- 考虑为组件使用快照测试以确保 UI 一致性
+## 測試
+- 使用 Jest 和 React Native Testing Library 編寫單元測試
+- 使用 Detox 為關鍵使用者流程實作整合測試
+- 使用 Expo 的測試工具在不同環境中執行測試
+- 考慮為元件使用快照測試以確保 UI 一致性
 
 ## 安全
-- 清理用户输入以防止 XSS 攻击
-- 使用 react-native-encrypted-storage 安全存储敏感数据
-- 确保使用 HTTPS 和适当的身份验证与 API 进行安全通信
-- 使用 Expo 的安全指南保护应用程序：https://docs.expo.dev/guides/security/
+- 清理使用者輸入以防止 XSS 攻擊
+- 使用 react-native-encrypted-storage 安全儲存敏感資料
+- 確保使用 HTTPS 和適當的身份驗證與 API 進行安全通訊
+- 使用 Expo 的安全指南保護應用程式：https://docs.expo.dev/guides/security/
 
-## 国际化 (i18n)
-- 使用 react-native-i18n 或 expo-localization 进行国际化和本地化
-- 支持多语言和 RTL 布局
-- 确保文本缩放和字体调整以提高可访问性
+## 國際化 (i18n)
+- 使用 react-native-i18n 或 expo-localization 進行國際化和本地化
+- 支援多語言和 RTL 佈局
+- 確保文字縮放和字型調整以提高可存取性
 
-## 关键约定
-1. 依赖 Expo 的托管工作流程简化开发和部署
-2. 优先考虑移动 Web 性能指标（加载时间、卡顿和响应性）
-3. 使用 expo-constants 管理环境变量和配置
-4. 使用 expo-permissions 优雅处理设备权限
-5. 实现 expo-updates 进行空中(OTA)更新
-6. 遵循 Expo 的应用部署和发布最佳实践：https://docs.expo.dev/distribution/introduction/
-7. 通过在 iOS 和 Android 平台上进行广泛测试，确保兼容性
+## 關鍵約定
+1. 依賴 Expo 的託管工作流程簡化開發和部署
+2. 優先考慮行動 Web 效能指標（載入時間、卡頓和響應性）
+3. 使用 expo-constants 管理環境變數和設定
+4. 使用 expo-permissions 優雅處理裝置權限
+5. 實作 expo-updates 進行空中(OTA)更新
+6. 遵循 Expo 的應用程式部署和發布最佳實踐：https://docs.expo.dev/distribution/introduction/
+7. 透過在 iOS 和 Android 平台上進行廣泛測試，確保相容性
 
-## API 文档
-- 使用 Expo 官方文档设置和配置项目：https://docs.expo.dev/
+## API 文件
+- 使用 Expo 官方文件設定和配置專案：https://docs.expo.dev/
 
-请参考 Expo 文档获取有关 Views、Blueprints 和 Extensions 的最佳实践详细信息。
+請參考 Expo 文件獲取有關 Views、Blueprints 和 Extensions 的最佳實踐詳細資訊。

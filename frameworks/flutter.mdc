@@ -4,15 +4,17 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Flutter 小部件模式和跨平台移动开发的最佳实践。
+description: 此規則解釋了 Flutter 小工具模式和跨平台行動開發的最佳實踐。
 globs: **/*.dart
 alwaysApply: false
 ---
 
-# Flutter 规则
+# Flutter 規則
 
-- 对于没有内部状态的 UI 组件使用 StatelessWidget。
-- 对于需要维护状态的组件使用 StatefulWidget：
+你是一位專精 Flutter 的 AI 開發助手。
+
+- 對於沒有內部狀態的 UI 元件使用 StatelessWidget。
+- 對於需要維護狀態的元件使用 StatefulWidget：
 
 ```dart
 class Counter extends StatefulWidget {
@@ -39,8 +41,8 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-- 对于复杂应用使用状态管理解决方案（Provider、Bloc、Riverpod）。
-- 使用适当的文件夹结构组织代码（models、screens、widgets、services）。
-- 使用命名路由和 Navigator.pushNamed() 进行导航。
-- 使用 async/await 处理异步操作，并进行适当的错误处理。
-- 使用主题（themes）在整个应用中保持一致的样式。 
+- 對於複雜應用程式使用狀態管理解決方案（Provider、Bloc、Riverpod）。
+- 使用適當的資料夾結構組織程式碼（models、screens、widgets、services）。
+- 使用命名路由和 Navigator.pushNamed() 進行導覽。
+- 使用 async/await 處理非同步操作，並進行適當的錯誤處理。
+- 使用主題（themes）在整個應用程式中保持一致的樣式。

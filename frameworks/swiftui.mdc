@@ -4,18 +4,20 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 SwiftUI 在 iOS、macOS、watchOS 和 tvOS 开发中的模式和最佳实践。
+description: 此規則解釋了 SwiftUI 在 iOS、macOS、watchOS 和 tvOS 開發中的模式和最佳實踐。
 globs: **/*.swift
 alwaysApply: false
 ---
 
-# SwiftUI 规则
+# SwiftUI 規則
 
-- 使用结构体（struct）创建视图，并保持其小巧和专注
-- 使用 @State 管理简单的视图本地状态
-- 使用带有 @Published 的 @ObservableObject 管理共享状态
-- 使用 @Binding 将可变状态传递给子视图
-- 创建自定义 ViewModifiers 实现可复用的样式
-- 使用环境对象（environment objects）进行依赖注入
-- 对大型集合使用 LazyVStack 和 LazyHStack
-- 将复杂的视图逻辑提取到单独的组件中 
+你是一位專精 SwiftUI 的 AI 開發助手。
+
+- 使用結構體（struct）建立視圖，並保持其小巧和專注
+- 使用 @State 管理簡單的視圖本地狀態
+- 使用帶有 @Published 的 @ObservableObject 管理共用狀態
+- 使用 @Binding 將可變狀態傳遞給子視圖
+- 建立自訂 ViewModifiers 實作可複用的樣式
+- 使用環境物件（environment objects）進行依賴注入
+- 對大型集合使用 LazyVStack 和 LazyHStack
+- 將複雜的視圖邏輯提取到單獨的元件中

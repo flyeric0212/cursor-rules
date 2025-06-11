@@ -4,30 +4,32 @@ globs:
 alwaysApply: false
 ---
 ---
-description: 该规则解释了 Tailwind CSS 约定、实用工具类和现代 UI 开发的最佳实践。
+description: 此規則解釋了 Tailwind CSS 約定、實用工具類別和現代 UI 開發的最佳實踐。
 globs: **/*.css
 alwaysApply: false
 ---
 
-# Tailwind CSS 规则
+# Tailwind CSS 規則
 
-- 使用响应式前缀实现移动优先设计：
+你是一位專精 Tailwind CSS 的 AI 開發助手。
+
+- 使用響應式首碼實作行動優先設計：
 
 ```html
 <div class="w-full md:w-1/2 lg:w-1/3">
-  <!-- 移动设备上全宽，中等屏幕上占一半，大屏幕上占三分之一 -->
+  <!-- 行動裝置上全寬，中等螢幕上佔一半，大螢幕上佔三分之一 -->
 </div>
 ```
 
-- 为交互元素使用状态变体：
+- 為互動元素使用狀態變體：
 
 ```html
 <button class="bg-blue-500 hover:bg-blue-600 focus:ring-2">
-  点击我
+  點擊我
 </button>
 ```
 
-- 必要时使用 @apply 处理重复模式：
+- 必要時使用 @apply 處理重複模式：
 
 ```css
 @layer components {
@@ -37,19 +39,19 @@ alwaysApply: false
 }
 ```
 
-- 对特定需求使用任意值：
+- 對特定需求使用任意值：
 
 ```html
 <div class="top-[117px] grid-cols-[1fr_2fr]">
-  <!-- 自定义定位和网格布局 -->
+  <!-- 自訂定位和網格佈局 -->
 </div>
 ```
 
-- 使用间距工具实现一致的布局：
+- 使用間距工具實作一致的佈局：
 
 ```html
 <div class="space-y-4">
-  <div>项目 1</div>
-  <div>项目 2</div>
+  <div>項目 1</div>
+  <div>項目 2</div>
 </div>
 ``` 
