@@ -24,7 +24,7 @@ https://www.bilibili.com/video/BV1S3VhzpEqL/
 这些规则始终生效，为所有代码提供基础规范：
 
 - **core.mdc** - 核心开发原则和响应语言
-- **teck-stack.mdc** - 技术栈定义和官方文档链接
+- **tech-stack.mdc** - 技术栈定义和官方文档链接
 - **project-structure.mdc** - 项目结构和文件组织规范
 - **general.mdc** - 通用编程规则（后续将移除）
 
@@ -41,6 +41,7 @@ https://www.bilibili.com/video/BV1S3VhzpEqL/
 - **WXML** (wxml.mdc) - 微信小程序标记语言
 - **WXSS** (wxss.mdc) - 微信小程序样式表
 - **Kotlin** (kotlin.mdc)
+- **C#** (c#.mdc)
 
 ### 3、框架层
 
