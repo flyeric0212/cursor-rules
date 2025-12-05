@@ -1,21 +1,16 @@
 ---
-description: 该规则解释了 Next.js 全栈开发的约定和最佳实践。
-globs: **/*.js,**/*.jsx,**/*.ts,**/*.tsx
+description: Next.js 全栈开发的约定和最佳实践
+globs: *.tsx,*.ts
 alwaysApply: false
 ---
 
-# Next.js 规则
+# Next.js 16 开发规则和最佳实践
 
-- 使用 App Router 结构，在路由目录中使用 `page.tsx` 文件。
-- 客户端组件必须在文件顶部明确标记 `'use client'`。
-- 目录名使用 kebab-case（例如 `components/auth-form`），组件文件使用 PascalCase。
+- 利用 Next.js 16 的新特性（如 Server Actions）来提升性能和安全性
+- 使用 App Router 结构，在路由目录中使用 `page.tsx` 文件
 - 优先使用命名导出而非默认导出，即使用 `export function Button() { /* ... */ }` 而不是 `export default function Button() { /* ... */ }`。
-- 尽量减少 `'use client'` 指令：
-  - 保持大多数组件为 React Server Components (RSC)
-  - 仅在需要交互性时使用客户端组件，并用带有 fallback UI 的 `Suspense` 包装
-  - 为交互元素创建小型客户端组件包装器
-- 尽可能避免不必要的 `useState` 和 `useEffect`：
-  - 使用服务器组件进行数据获取
-  - 使用 React Server Actions 处理表单
-  - 使用 URL 搜索参数实现可共享状态
+- 客户端组件必须在文件顶部明确标记 `'use client'`
+- 使用 `error.tsx` 和 `not-found.tsx` 实现恰当的错误处理，提升用户体验
+- 使用 `next-safe-action` 进行安全的表单提交和 API 调用
+- 利用 `next-themes` 轻松管理主题和支持深色模式
 - 使用 `nuqs` 管理 URL 搜索参数状态
