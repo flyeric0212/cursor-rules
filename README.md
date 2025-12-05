@@ -52,6 +52,10 @@ https://www.bilibili.com/video/BV1S3VhzpEqL/
 - **Vue.js** (vuejs.mdc) - Vue.js 应用开发
 - **Next.js** (nextjs.mdc) - React 全栈框架
 - **Tailwind CSS** (tailwind.mdc) - 实用优先的 CSS 框架
+- **Shadcn UI** (shadcn.mdc) - 基于 Radix UI 和 Tailwind 的组件库
+- **Zustand** (zustand.mdc) - 轻量级状态管理
+- **Zod** (zod.mdc) - TypeScript 优先的 Schema 声明和验证库
+- **React Hook Form** (react-hook-form.mdc) - 高性能表单验证库
 
 #### 后端框架
 - **Django** (django.mdc) - Python Web 框架
@@ -103,9 +107,13 @@ cursor-rules/
 │   ├── # 前端框架
 │   ├── nextjs.mdc           # Next.js框架规则
 │   ├── react.mdc            # React框架规则
+│   ├── react-hook-form.mdc  # React Hook Form规则
 │   ├── react-native.mdc     # React Native框架规则
-│   ├── vuejs.mdc            # Vue.js框架规则
+│   ├── shadcn.mdc           # Shadcn UI规则
 │   ├── tailwind.mdc         # Tailwind CSS规则
+│   ├── vuejs.mdc            # Vue.js框架规则
+│   ├── zod.mdc              # Zod验证规则
+│   ├── zustand.mdc          # Zustand状态管理规则
 │   ├── # 后端框架
 │   ├── django.mdc           # Django框架规则
 │   ├── fastapi.mdc          # FastAPI框架规则

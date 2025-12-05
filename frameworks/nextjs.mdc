@@ -8,6 +8,7 @@ alwaysApply: false
 
 - 利用 Next.js 16 的新特性（如 Server Actions）来提升性能和安全性
 - 使用 App Router 结构，在路由目录中使用 `page.tsx` 文件
+- 优先在 Server Components 中直接获取数据，减少客户端 `useEffect` 的使用
 - 优先使用命名导出而非默认导出，即使用 `export function Button() { /* ... */ }` 而不是 `export default function Button() { /* ... */ }`。
 - 客户端组件必须在文件顶部明确标记 `'use client'`
 - 使用 `error.tsx` 和 `not-found.tsx` 实现恰当的错误处理，提升用户体验
