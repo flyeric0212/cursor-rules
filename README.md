@@ -75,6 +75,10 @@ https://www.bilibili.com/video/BV1S3VhzpEqL/
 - **文档编写规则** (document.mdc)
 
 
+## 相关在线工具 (Online Generators)
+
+- [DevScratchpad AI Skill Studio](https://www.devscratchpad.tech/ai-skill-studio/cursor-rules) - 100% 纯客户端浏览器运行的 Cursor `.mdc` 规则与 Claude Skills 在线可视化生成器，内置 Next.js 15、React、FastAPI、Supabase 等 36+ 框架预设，支持一键预览与导出。
+
 ## 使用方法
 
 1. 克隆本仓库
